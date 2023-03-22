@@ -10,6 +10,7 @@ import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.test.annotation.Rollback;
 
 import java.time.LocalDateTime;
 import java.util.List;
@@ -160,7 +161,7 @@ class SbbApplicationTests {
 	}
 
 	@Transactional //여기서의 트랜잭션의 역할 : 함수가 끝날 때까지 전화(DB와의)를 끊지 않음
-	//@Rollback(false)
+	@Rollback(false)
 	@Test
 	@DisplayName("답변에 달린 질문 찾기")
 	void t011() {
